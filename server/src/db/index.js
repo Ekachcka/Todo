@@ -2,9 +2,8 @@ const mongoose = require("mongoose");
 const { DB_URL, DB_NAME } = require("../constans");
 
 
-async function start() {
-  console.log(`${DB_URL,DB_NAME}`)
-  await mongoose.connect(`${DB_URL}`, { dbName: DB_NAME });
+ function start() {
+  return mongoose.connect(`${DB_URL}`, { dbName: DB_NAME });
 }
 
 start()

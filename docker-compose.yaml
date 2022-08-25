@@ -24,25 +24,19 @@ services:
 
     environment:
       - PORT=5000
-      - DB_URL=mongodb://localhost:27017/
-      - DB_NAME=test
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=root1234
-      - MONGO_INITDB_DATABASE=product-api
+      - DB_URL=mongodb://db_mongo:27017/
+      - DB_NAME=todo-api
     ports:
       - "5000:5000"
     depends_on:
-      - mongo
+      - db_mongo
     volumes:
       - ./server:/server
       - /server/node_modules
 
 
-  mongo:
+  db_mongo:
     image: mongo
     ports:
       - "27017:27017"
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: root1234
-      MONGO_INITDB_DATABASE: product-api
+      

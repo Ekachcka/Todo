@@ -1,4 +1,4 @@
-const { Schema, model } = require("../index");
+const { Schema, model } = require("mongoose");
 
 const todoSchema = new Schema({
     text: { type: String, require: true, maxLength: 255 },
